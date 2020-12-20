@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="de" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Javascript: Weihnachtsbaum-Schmücken</title>
+
+    <style>
+      html {
+        height: 100%;
+      }
+      body {
+        background-image: url("img-all/Weihnachten4.jpg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+      .text {
+        background-color: rgba(0, 0, 0, 0.7);
+        color: white;
+        padding: 10px;
+        height: 100%;
+      }
+      .weihnachtsbaum {
+        text-align: center;
+        position: relative;
+      }
+      .weihnachtsbaum .kugeln {
+        position: absolute;
+      }
+    </style>
+
+  </head>
+  <body>
+
+    <div class="text">
+      <img style="float:right;" src="img/ani6.gif" alt="BaumGIF">
+      <h1>Weihnachtsbaum schmücken</h1>
+      <p>Schmücken Sie den Weihnachtsbaum. Suchen Sie zunächst die Stellen, an denen eine Kugel rankönnte.</p>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div class="weihnachtsbaum">
+      <center><img src="img/tannenbaum.png" alt="Tannenbaum"></center>
+      <img class="kugeln" id="kugel1" onmouseover="dummycheck(this)" onclick="schmuecken(this)" style="top: 72%; right: 58%;" src="img/kugeln/dummy.gif" alt="">
+      <img class="kugeln" id="kugel2" onmouseover="dummycheck(this)" onclick="schmuecken(this)" style="top: 77%; right: 52%;" src="img/kugeln/dummy.gif" alt="">
+      <img class="kugeln" id="kugel3" onmouseover="dummycheck(this)" onclick="schmuecken(this)" style="top: 77%; right: 44%;" src="img/kugeln/dummy.gif" alt="">
+      <img class="kugeln" id="kugel4" onmouseover="dummycheck(this)" onclick="schmuecken(this)" style="top: 73%; right: 38%;" src="img/kugeln/dummy.gif" alt="">
+      <img class="kugeln" id="kugel5" onmouseover="dummycheck(this)" onclick="schmuecken(this)" style="top: 57%; right: 54%;" src="img/kugeln/dummy.gif" alt="">
+      <img class="kugeln" id="kugel6" onmouseover="dummycheck(this)" onclick="schmuecken(this)" style="top: 60%; right: 48%;" src="img/kugeln/dummy.gif" alt="">
+      <img class="kugeln" id="kugel7" onmouseover="dummycheck(this)" onclick="schmuecken(this)" style="top: 58%; right: 43%;" src="img/kugeln/dummy.gif" alt="">
+      <img class="kugeln" id="kugel8" onmouseover="dummycheck(this)" onclick="schmuecken(this)" style="top: 42%; right: 46%;" src="img/kugeln/dummy.gif" alt="">
+      <img class="kugeln" id="kugel9" onmouseover="dummycheck(this)" onclick="schmuecken(this)" style="top: 44%; right: 51%;" src="img/kugeln/dummy.gif" alt="">
+      <img class="kugeln" id="kugel10" onmouseover="dummycheck(this)" onclick="schmuecken(this)" style="top: 28%; right: 52%;" src="img/kugeln/dummy.gif" alt="">
+      <img class="kugeln" id="kugel11" onmouseover="dummycheck(this)" onclick="schmuecken(this)" style="top: 29%; right: 45%;" src="img/kugeln/dummy.gif" alt="">
+      <img class="kugeln" id="kugel12" onmouseover="dummycheck(this)" onclick="schmuecken(this)" style="top: 32%; right: 48.5%;" src="img/kugeln/dummy.gif" alt="">
+      <img class="kugeln" id="kugel13" onmouseover="dummycheck(this)" onclick="schmuecken(this)" style="top: 15%;right: 48.75%;" src="img/kugeln/dummy.gif" alt="">
+    </div>
+
+    <script>
+      var kugeldummy = "img/kugeln/dummy.gif";
+      var kugeln = ["img/kugeln/blau.gif", "img/kugeln/rot.gif", "img/kugeln/gelb.gif", "img/kugeln/gruen.gif"];
+
+      function dummycheck(kugel) {
+        if ((kugel.style.backgroundColor != "black") && (!kugel.classList.contains("black"))) {
+          kugel.style.backgroundColor = "black";
+        }
+      }
+
+      function schmuecken(kugel) {
+        var zufaelligekugelposition = Math.floor(Math.random() * 4);
+        kugel.src = kugeln[zufaelligekugelposition];
+        kugel.style.color = "";
+        kugel.style.backgroundColor = "";
+        kugel.classList.add("black");
+      }
+    </script>
+
+  </body>
+</html>
